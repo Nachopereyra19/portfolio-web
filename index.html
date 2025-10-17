@@ -9,6 +9,7 @@
 </head>
 <body class="dark">
   <header>
+     <!--  Header -->
     <div class="logo">IP</div>
     <nav>
       <a href="#inicio">Inicio</a>
@@ -18,7 +19,7 @@
     </nav>
     <button id="theme-toggle">☀️</button>
   </header>
-
+    <!--  Mini presentación animada -->
   <section id="inicio" class="hero">
     <div class="hero-text">
       <h1 class="typing">Hola, soy <span>Ignacio Pereyra</span></h1>
@@ -27,51 +28,61 @@
       <a href="#proyectos" class="btn">Ver proyectos</a>
     </div>
   </section>
-
+    <!--  Carta de presentación -->
   <section id="sobre-mi" class="about">
     <h2>Sobre mí</h2>
     <p>
-      Soy estudiante de programación desde 2022, con formación en Desarrollo Web (Coderhouse). 
-      Actualmente me encuentro aprendiendo JavaScript y Python para expandir mis conocimientos en programación estructurada y lógica.
+      Soy estudiante universitario de programación desde 2022, con formación en Desarrollo Web (Coderhouse). 
+      Solidos conocimientos sobre programación estructurada y actualmente estudiando programación orientada a objetos.
+      A su vez, cuento con un amplio conocimiento y experiencia en HTML, CSS, JavaScript, frameworks 
+      como NodeJs y base de datos.
     </p>
   </section>
+<!-- Proyectos generales -->
+ <section id="proyectos" class="projects">
+  <h2>Proyectos</h2>
+  <div class="project-grid">
+    <!-- Proyecto Pokémon -->
+    <a href="https://nachopereyra19.github.io/pokeshop-web/" class="card" target="_blank">
+      <h3>Landing Page Pokémon</h3>
+      <p>Proyecto con HTML y CSS donde apliqué diseño responsive y animaciones.</p>
+    </a>
 
-  <section id="proyectos" class="projects">
-    <h2>Proyectos</h2>
-    <div class="project-grid">
-      <a href="https://nachopereyra19.github.io/pokeshop-web/" class="card" target="_blank">
-        <h3>Landing Page Pokémon</h3>
-        <p>Proyecto con HTML y CSS donde apliqué diseño responsive y animaciones.</p>
-      </a>
-      <a href="proyectos/portfolio.html" class="card" target="_blank">
-        <h3>Portfolio Personal</h3>
-        <p>Mi primer portfolio con efectos neon y estructura profesional.</p>
-      </a>
+    <!-- Portfolio personal -->
+    <a href="https://Nachopereyra19.github.io/portfolio-web/" class="card" target="_blank">
+      <h3>Portfolio Personal</h3>
+      <p>Mi primer portfolio con efectos neon y estructura profesional.</p>
+    </a>
+    <!--  Calculadora -->
       <a href="https://nachopereyra19.github.io/calculadoraJS/" class="card" target="_blank">
         <h3>Calculadora simple</h3>
         <p>Calculadora simple con JavaScript</p>
       </a>
+    <!--  Mini juego JS -->
+      <a href="https://nachopereyra19.github.io/miniJuegoJS/" class="card" target="_blank">
+        <h3>Mini juego</h3>
+        <p>Mi primer juego con JavaScript</p>
+      </a>
     </div>
   </section>
-
+<!--  Contacto -->
   <section id="contacto" class="contact">
     <h2>Contacto</h2>
     <p>¿Querés colaborar o tenés una propuesta?</p>
-    <a href="mailto:ignaciopereyra@email.com" class="btn">Escribime</a>
+    <a href="mailto:nachopereyra1422@gmail.com" class="btn">Escribime</a>
   </section>
-
+<!--  Pie de pagina -->
   <footer>
     <p>© 2025 Ignacio Pereyra | Portfolio Web</p>
   </footer>
-
+<!-- Cambiar entre modo dia y modo noche-->
 <script>
   const toggle = document.getElementById('theme-toggle');
   const body = document.body;
   toggle.addEventListener('click', () => {
     body.classList.toggle('dark');
     body.classList.toggle('light');
-    toggle.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
-  });
+    toggle.textContent = body.classList.contains('dark') ? '☀️' : '🌙'; });
 </script>
 </body>
 </html>
