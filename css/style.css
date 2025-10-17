@@ -1,102 +1,118 @@
-/* ====== ESTILOS GENERALES ====== */
+/* ==========================================================
+     ESTILO PORTFOLIO OSCURO / CLARO 
+   ========================================================== */
 
-
+/* ====== VARIABLES CSS ====== */
 :root {
-  --accent: #00ffff; /* color celeste por defecto */
+  --accent: #00ffff; /* Color principal del tema, usado para textos, botones y efectos neón */
 }
 
+/* ====== RESET GENERAL ====== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Elimina margenes por defecto */
+  padding: 0; /* Elimina padding por defecto */
+  box-sizing: border-box; /* Hace que padding y border se incluyan en el ancho total */
 }
 
-
+/* ====== ESTILO BASE DEL BODY ====== */
 body {
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
-  transition: background 0.6s, color 0.6s;
+  font-family: 'Poppins', sans-serif; /* Fuente moderna y legible */
+  overflow-x: hidden; /* Evita scroll horizontal no deseado */
+  transition: background 0.6s, color 0.6s; /* Animación suave al cambiar colores (modo oscuro/claro) */
 }
 
-/* ====== MODO OSCURO ====== */
+/* ==========================================================
+   🔹 MODO OSCURO
+   ========================================================== */
 body.dark {
-  --accent: #00ffff;
-  background: radial-gradient(circle at top, #0a0a0a, #000);
-  color: #fff;
+  --accent: #00ffff; /* Color principal en modo oscuro */
+  background: radial-gradient(circle at top, #0a0a0a, #000); /* Fondo degradado oscuro */
+  color: #fff; /* Texto claro */
 }
 
+/* Cartas en modo oscuro */
 body.dark .card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid #00ffff33;
+  background: rgba(255,255,255,0.05); /* Fondo semi-transparente */
+  border: 1px solid #00ffff33; /* Borde tenue con color principal */
 }
 
+/* Titulos y botones */
 body.dark h2 { color: #00ffff; }
 body.dark .btn { background: var(--accent); color: #000; }
-body.dark .btn:hover { background: #00cccc; }
+body.dark .btn:hover { background: #00cccc; } /* Cambio de color al pasar el mouse */
 
-/* ====== MODO CLARO ====== */
+/* ==========================================================
+   🔹 MODO CLARO
+   ========================================================== */
 body.light {
-  --accent: #9b5de5;
-  background: linear-gradient(180deg, #f6f6f6, #eaeaea);
-  color: #111;
+  --accent: #9b5de5; /* Color principal en modo claro */
+  background: linear-gradient(180deg, #f6f6f6, #eaeaea); /* Fondo degradado claro */
+  color: #111; /* Texto oscuro */
 }
 
+/* Header y elementos claros */
 body.light header {
-  background: rgba(255,255,255,0.8);
-  border-bottom: 2px solid #00cccc55;
+  background: rgba(255,255,255,0.8); /* Fondo semi-transparente */
+  border-bottom: 2px solid #00cccc55; /* Borde inferior */
 }
 
 body.light h2 { color: #00cccc; }
+
 body.light .btn {
   background: var(--accent);
   color: #fff;
 }
+
 body.light .btn:hover {
   background: #009999;
 }
 
-/* ====== HEADER ====== */
+/* ==========================================================
+   🔹 HEADER - Barra superior fija
+   ========================================================== */
 header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 50px;
-  z-index: 10;
-  backdrop-filter: blur(8px);
-  border-bottom: 2px solid #00ffff55;
-  background: rgba(0,0,0,0.7);
+  position: fixed; /* Siempre visible */
+  top: 0; /* Pegado arriba */
+  width: 100%; /* Ocupa todo el ancho */
+  display: flex; /* Layout flexible */
+  justify-content: space-between; /* Separación de logo y nav */
+  align-items: center; /* Centra verticalmente */
+  padding: 15px 50px; /* Espaciado interno */
+  z-index: 10; /* Por encima de otros elementos */
+  backdrop-filter: blur(8px); /* Efecto de vidrio difuminado */
+  border-bottom: 2px solid #00ffff55; /* Borde inferior semitransparente */
+  background: rgba(0,0,0,0.7); /* Fondo semi-transparente oscuro */
 }
 
+/* Logo con efecto neón pulsante */
 .logo {
   font-weight: 700;
   font-size: 1.8em;
   letter-spacing: 2px;
   color: var(--accent);
-  animation: glowPulse 3s ease-in-out infinite;
+  animation: glowPulse 3s ease-in-out infinite; /* Animación de brillo */
   transition: color 0.6s, text-shadow 0.6s;
 }
 
-/* Animación de brillo adaptable */
+/* Animación de brillo pulsante */
 @keyframes glowPulse {
   0%, 100% { text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent); }
   50% { text-shadow: 0 0 25px var(--accent), 0 0 50px var(--accent); }
 }
 
-
+/* Navegación */
 nav a {
-  color: inherit;
-  margin: 0 15px;
+  color: inherit; /* Hereda color del tema */
+  margin: 0 15px; /* Separación entre links */
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.3s; /* Suaviza cambios de color */
 }
 
 nav a:hover {
-  color: var(--accent);
+  color: var(--accent); /* Resalta al pasar el mouse */
 }
 
+/* Botón de cambio de tema */
 #theme-toggle {
   background: none;
   border: none;
@@ -107,26 +123,28 @@ nav a:hover {
 }
 
 #theme-toggle:hover {
-  transform: scale(1.2);
+  transform: scale(1.2); /* Efecto agrandado al pasar el mouse */
 }
 
-/* ====== HERO ====== */
+/* ==========================================================
+   🔹 HERO - Sección inicial
+   ========================================================== */
 .hero {
-  height: 100vh;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Centra contenido */
   text-align: center;
-  padding: 0 20px;
+  padding: 0 20px; /* Espaciado lateral */
 }
 
-/* === TYPING EFFECT === */
+/* ===== TYPING EFFECT ===== */
 .typing {
-  overflow: hidden;
-  border-right: 3px solid #00ffff;
+  overflow: hidden; /* Oculta texto que desborda */
+  border-right: 3px solid #00ffff; /* Cursor tipo terminal */
   white-space: nowrap;
-  animation: typing 4s steps(25) 1s 1 normal both, blink 0.7s infinite;
-  width: 0;
+  animation: typing 4s steps(25) 1s 1 normal both, blink 0.7s infinite; /* Animación de tipeo */
+  width: 0; /* Inicialmente oculto */
 }
 
 @keyframes typing {
@@ -135,7 +153,7 @@ nav a:hover {
 }
 
 @keyframes blink {
-  50% { border-color: transparent; }
+  50% { border-color: transparent; } /* Parpadeo cursor */
 }
 
 .hero-text h1 {
@@ -149,7 +167,6 @@ nav a:hover {
   transition: color 0.6s, text-shadow 0.6s;
 }
 
-
 .hero-text h2 {
   font-weight: 300;
   margin-bottom: 20px;
@@ -162,24 +179,27 @@ nav a:hover {
   color: #aaa;
 }
 
+/* Botones */
 .btn {
-  padding: 10px 25px;
+  padding: 5px 25px;
   border-radius: 25px;
   font-weight: 600;
   transition: 0.3s;
   text-decoration: none;
 }
 
-/* ====== SECCIONES ====== */
+/* ==========================================================
+   🔹 SECCIONES GENERALES
+   ========================================================== */
 section {
-  padding: 100px 50px;
-  text-align: center;
+  padding: 100px 50px; /* Espaciado interno */
+  text-align: center; /* Centra contenido */
 }
 
 .about, .projects, .contact {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.03); /* Fondo tenue */
   border-top: 1px solid #00ffff22;
-  border-bottom: 1px solid #00ffff22;
+  border-bottom: 1px solid #00ffff22; /* Bordes sutiles */
 }
 
 h2 {
@@ -188,34 +208,39 @@ h2 {
 }
 
 p {
-  line-height: 1.6;
+  line-height: 1.6; /* Espaciado entre líneas */
 }
 
-/* ====== PROYECTOS ====== */
+/* ==========================================================
+   🔹 PROYECTOS - GRID DE CARDS
+   ========================================================== */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste automático según pantalla */
+  gap: 30px; /* Espaciado entre cards */
   margin-top: 40px;
 }
 
+/* Tarjetas individuales */
 .card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  border-radius: 15px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: block; /* Se comporta como bloque clickeable */
+  text-decoration: none; /* Sin subrayado */
+  color: inherit; /* Hereda color del tema */
+  border-radius: 15px; /* Bordes redondeados */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Animaciones suaves */
   position: relative;
   padding: 25px;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1s ease forwards;
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateY(40px); /* Posición inicial abajo */
+  animation: fadeUp 1s ease forwards; /* Efecto subir */
 }
 
+/* Retraso de animación por card */
 .card:nth-child(1) { animation-delay: 0.3s; }
 .card:nth-child(2) { animation-delay: 0.6s; }
 .card:nth-child(3) { animation-delay: 0.9s; }
 
+/* Keyframes animación subir */
 @keyframes fadeUp {
   to {
     opacity: 1;
@@ -223,13 +248,15 @@ p {
   }
 }
 
-/* Hover simple (sin luces) */
+/* Hover de la card */
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 10px rgba(0,255,255,0.1);
+  transform: translateY(-10px); /* Leve elevación */
+  box-shadow: 0 0 10px rgba(0,255,255,0.1); /* Sombra tipo neón */
 }
 
-/* ====== FOOTER ====== */
+/* ==========================================================
+   🔹 FOOTER
+   ========================================================== */
 footer {
   text-align: center;
   padding: 20px;
@@ -237,10 +264,12 @@ footer {
   border-top: 1px solid #00ffff33;
 }
 
-/* ====== RESPONSIVE ====== */
+/* ==========================================================
+   🔹 RESPONSIVE - Ajustes para pantallas pequeñas
+   ========================================================== */
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
+    flex-direction: column; /* Pone logo y nav vertical */
     gap: 10px;
     padding: 20px;
   }
@@ -251,3 +280,4 @@ footer {
     font-size: 1em;
   }
 }
+
