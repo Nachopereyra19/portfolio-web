@@ -1,7 +1,9 @@
-/* ====== ESTILOS GENERALES ====== */
+/* ===================== */
+/*     ESTILOS BASE      */
+/* ===================== */
 
 :root {
-  --accent: #00ffff; /* color celeste por defecto */
+  --accent: #00ffff;
 }
 
 * {
@@ -11,28 +13,38 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.5s, color 0.5s;
   overflow-x: hidden;
-  transition: background 0.6s, color 0.6s;
 }
 
-/* ====== MODO OSCURO ====== */
+/* ===================== */
+/*       MODO OSCURO     */
+/* ===================== */
+
 body.dark {
-  --accent: #00ffff;
   background: radial-gradient(circle at top, #0a0a0a, #000);
   color: #fff;
 }
 
 body.dark .card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid #00ffff33;
 }
 
-body.dark h2 { color: var(--accent); }
-body.dark .btn { background: var(--accent); color: #000; }
-body.dark .btn:hover { background: #00cccc; }
+body.dark h2 {
+  color: var(--accent);
+}
 
-/* ====== MODO CLARO ====== */
+body.dark .btn {
+  background: var(--accent);
+  color: #000;
+}
+
+/* ===================== */
+/*       MODO CLARO      */
+/* ===================== */
+
 body.light {
   --accent: #9b5de5;
   background: linear-gradient(180deg, #f6f6f6, #eaeaea);
@@ -40,105 +52,112 @@ body.light {
 }
 
 body.light header {
-  background: rgba(255,255,255,0.8);
-  border-bottom: 2px solid #00cccc55;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 2px solid #9b5de5;
 }
 
-body.light h2 { color: #00cccc; }
+body.light h2 {
+  color: #9b5de5;
+}
+
 body.light .btn {
   background: var(--accent);
   color: #fff;
 }
-body.light .btn:hover {
-  background: #009999;
-}
 
-/* ====== HEADER ====== */
-/* ====== HEADER Y NAV CORREGIDOS ===== */
+/* ===================== */
+/*        HEADER         */
+/* ===================== */
+
 header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  display: flex;
-  justify-content: center; /* centrar nav + logo juntos */
-  align-items: center;
-  padding: 15px 20px;
-  z-index: 100;
-  backdrop-filter: blur(8px);
-  background: rgba(0, 0, 0, 0.7);
-  border-bottom: 2px solid var(--accent);
-}
-
-/* Dentro del header queremos un contenedor para alinear */
-header .header-container {
-  width: 100%;
-  max-width: 900px; /* o lo que te convenga */
+  padding: 15px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 2px solid var(--accent);
+  z-index: 100;
 }
 
-/* Logo alineado a la izquierda del contenedor, nav al centro */
 .logo {
-  flex: 0 0 auto;
+  font-weight: 700;
+  font-size: 1.4rem;
 }
 
-/* Nav: centro los links */
-header nav {
+nav {
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
+  gap: 25px;
 }
 
-header nav a {
+nav a {
   color: inherit;
   text-decoration: none;
-  padding: 5px 10px;
-  transition: color 0.3s;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-header nav a:hover {
+nav a:hover {
   color: var(--accent);
 }
 
 #theme-toggle {
-  flex: 0 0 auto;
   background: none;
   border: none;
+  font-size: 1.4rem;
   cursor: pointer;
   color: var(--accent);
-  font-size: 1.4em;
-  transition: transform 0.3s;
 }
 
-#theme-toggle:hover {
-  transform: scale(1.2);
-}
+/* ===================== */
+/*         HERO          */
+/* ===================== */
 
-/* ====== AJUSTAR HERO PARA HEADER FIJO ===== */
 .hero {
-  /* para que el contenido no quede detrás del header fijo */
-  padding-top: calc(15px + 1.8em + 20px); /* ajustar: header padding + alto logo + espacio extra */
-  /* mantengo los otros estilos que ya tenías */
-  height: calc(100vh - (15px + 1.8em + 20px));
+  height: 100vh;
+  padding-top: 120px; /* altura real del header */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-/* ====== CORRECCIÓN DEL TYPING (animación) ===== */
+.hero-text h1 {
+  font-size: 2.6rem;
+  margin-bottom: 15px;
+}
+
+.hero-text span {
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent);
+}
+
+.hero-text h2 {
+  font-weight: 300;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.hero-text p {
+  max-width: 600px;
+  margin: 0 auto 25px;
+  color: #aaa;
+}
+
+/* ===================== */
+/*    ANIMACIÓN TYPING   */
+/* ===================== */
+
 .typing {
   display: inline-block;
   overflow: hidden;
-  border-right: 3px solid var(--accent);
   white-space: nowrap;
+  border-right: 3px solid var(--accent);
+  animation: typing 3s steps(30), blink .7s infinite;
   width: 0;
-  animation: typing 3.5s steps(30, end), blink .7s infinite;
-  max-width: 100%;
 }
 
 @keyframes typing {
@@ -150,62 +169,31 @@ header nav a:hover {
   50% { border-color: transparent; }
 }
 
-/* Ajuste en pantallas muy pequeñas si se rompe la línea */
-@media (max-width: 600px) {
+/* Ajuste móvil sin romper la animación */
+@media (max-width: 480px) {
   .typing {
-    font-size: 1.8rem;
-    white-space: normal;
+    font-size: 1.9rem;
   }
 }
 
-/* ====== AJUSTES RESPONSIVE HEADER ===== */
-@media (max-width: 768px) {
-  header {
-    padding: 15px 10px;
-  }
-  header .header-container {
-    max-width: 100%;
-  }
-  nav a {
-    padding: 5px;
-    margin: 0 5px;
-  }
-}
-
-.hero-text h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-
-.hero-text span {
-  color: var(--accent);
-  text-shadow: 0 0 10px var(--accent);
-  transition: color 0.6s, text-shadow 0.6s;
-}
-
-.hero-text h2 {
-  font-weight: 300;
-  margin-bottom: 20px;
-  color: #ccc;
-}
-
-.hero-text p {
-  max-width: 600px;
-  margin: 0 auto 30px;
-  color: #aaa;
-}
+/* ===================== */
+/*        BOTÓN          */
+/* ===================== */
 
 .btn {
-  padding: 8px 25px;
+  padding: 10px 25px;
   border-radius: 25px;
+  text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
-  text-decoration: none;
 }
 
-/* ====== SECCIONES ====== */
+/* ===================== */
+/*      SECCIONES        */
+/* ===================== */
+
 section {
-  padding: 100px 50px;
+  padding: 100px 40px;
   text-align: center;
 }
 
@@ -216,38 +204,35 @@ section {
 }
 
 h2 {
-  margin-bottom: 30px;
-  font-size: 2em;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
 }
 
-p {
-  line-height: 1.6;
-}
+/* ===================== */
+/*    GRID PROYECTOS     */
+/* ===================== */
 
-/* ====== PROYECTOS ====== */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  gap: 25px;
   margin-top: 40px;
 }
 
 .card {
-  display: block;
   text-decoration: none;
   color: inherit;
-  border-radius: 15px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
   padding: 25px;
+  border-radius: 15px;
+  transition: 0.4s;
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
   animation: fadeUp 1s ease forwards;
 }
 
-.card:nth-child(1) { animation-delay: 0.3s; }
-.card:nth-child(2) { animation-delay: 0.6s; }
-.card:nth-child(3) { animation-delay: 0.9s; }
+.card:hover {
+  transform: translateY(-10px);
+}
 
 @keyframes fadeUp {
   to {
@@ -256,12 +241,10 @@ p {
   }
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 10px rgba(0,255,255,0.1);
-}
+/* ===================== */
+/*      FORMULARIO       */
+/* ===================== */
 
-/* ====== FORMULARIO ====== */
 .contact-form {
   max-width: 500px;
   margin: 30px auto 0;
@@ -274,11 +257,10 @@ p {
 .form-group textarea {
   width: 100%;
   padding: 12px 15px;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid #00ffff55;
-  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
   color: inherit;
-  font-size: 1rem;
   outline: none;
   transition: 0.3s;
 }
@@ -289,42 +271,33 @@ p {
   box-shadow: 0 0 8px var(--accent);
 }
 
-/* ====== FOOTER ====== */
+/* ===================== */
+/*        FOOTER         */
+/* ===================== */
+
 footer {
-  text-align: center;
   padding: 20px;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   border-top: 1px solid #00ffff33;
+  text-align: center;
 }
 
-/* ====== RESPONSIVE GENERAL ====== */
+/* ===================== */
+/*   RESPONSIVE HEADER   */
+/* ===================== */
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     gap: 10px;
-    padding: 20px;
+    padding: 15px 0;
   }
 
-  nav a {
-    margin: 0 10px;
-  }
-
-  .hero-text h1 {
-    font-size: 2.2em;
-  }
-
-  .hero-text h2 {
-    font-size: 1.1em;
-  }
-}
-
-@media (max-width: 480px) {
-  section {
-    padding: 80px 25px;
+  nav {
+    gap: 15px;
   }
 
   .hero-text h1 {
-    font-size: 1.9em;
+    font-size: 2.2rem;
   }
 }
-
