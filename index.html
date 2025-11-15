@@ -68,11 +68,26 @@
     </div>
   </section>
 <!--  Contacto -->
-  <section id="contacto" class="contact">
-    <h2>Contacto</h2>
-    <p>¿Querés colaborar o tenés una propuesta?</p>
-    <a href="mailto:nachopereyra1422@gmail.com" class="btn">Escribime</a>
-  </section>
+ <section id="contacto" class="contact">
+  <h2>Contacto</h2>
+  <p>¿Tenés alguna propuesta o querés contactar conmigo?</p>
+
+  <form class="contact-form" action="mailto:nachopereyra1422@gmail.com" method="POST" enctype="text/plain">
+    <div class="form-group">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+    </div>
+
+    <div class="form-group">
+      <input type="email" name="email" placeholder="Tu correo" required>
+    </div>
+
+    <div class="form-group">
+      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+    </div>
+
+    <button type="submit" class="btn">Enviar mensaje</button>
+  </form>
+ </section>
 <!--  Pie de pagina -->
   <footer>
     <p>© 2025 Ignacio Pereyra | Portfolio Web</p>
@@ -88,4 +103,5 @@
 </script>
 </body>
 </html>
+
 
