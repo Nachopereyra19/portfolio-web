@@ -4,104 +4,117 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ignacio Pereyra | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/style.css?v=10" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="dark">
+
+  <!-- ===== HEADER ===== -->
   <header>
-     <!--  Header -->
     <div class="logo">IP</div>
+
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#sobre-mi">Sobre mí</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#contacto">Contacto</a>
     </nav>
+
     <button id="theme-toggle">☀️</button>
   </header>
-    <!--  Mini presentación animada -->
+
+  <!-- ===== HERO ===== -->
   <section id="inicio" class="hero">
-  <div class="hero-inner">
+    <div class="hero-inner">
       <div class="hero-text">
         <h1 class="typing">Hola, soy <span>Ignacio Pereyra</span></h1>
         <h2>Estudiante de Programación & Desarrollador Web</h2>
         <p>Apasionado por crear experiencias web modernas, funcionales y con buen diseño.</p>
         <a href="#proyectos" class="btn">Ver proyectos</a>
       </div>
-  </div>
-</section>
-    <!--  Carta de presentación -->
+    </div>
+  </section>
+
+  <!-- ===== SOBRE MI ===== -->
   <section id="sobre-mi" class="about">
     <h2>Sobre mí</h2>
     <p>
       Soy estudiante universitario de programación desde 2022, con formación en Desarrollo Web (Coderhouse). 
-      Solidos conocimientos sobre programación estructurada y actualmente estudiando programación orientada a objetos.
-      A su vez, cuento con un amplio conocimiento y experiencia en HTML, CSS, JavaScript, frameworks 
-      como NodeJs y base de datos.
+      Sólidos conocimientos en programación estructurada y actualmente estudiando programación orientada a objetos.
+      Cuento con experiencia en HTML, CSS, JavaScript, Node.js y bases de datos.
     </p>
   </section>
-<!-- Proyectos generales -->
- <section id="proyectos" class="projects">
-  <h2>Proyectos</h2>
-  <div class="project-grid">
-    <!-- Proyecto Pokémon -->
-    <a href="https://nachopereyra19.github.io/pokeshop-web/" class="card" target="_blank">
-      <h3>Landing Page Pokémon</h3>
-      <p>Proyecto con HTML y CSS donde apliqué diseño responsive y animaciones.</p>
-    </a>
 
-    <!-- Portfolio personal -->
-    <a href="https://Nachopereyra19.github.io/portfolio-web/" class="card" target="_blank">
-      <h3>Portfolio Personal</h3>
-      <p>Mi primer portfolio con efectos neon y estructura profesional.</p>
-    </a>
-    <!--  Calculadora -->
-      <a href="https://nachopereyra19.github.io/calculadoraJS/" class="card" target="_blank">
-        <h3>Calculadora simple</h3>
-        <p>Calculadora simple con JavaScript</p>
+  <!-- ===== PROYECTOS ===== -->
+  <section id="proyectos" class="projects">
+    <h2>Proyectos</h2>
+
+    <div class="project-grid">
+
+      <a href="https://nachopereyra19.github.io/pokeshop-web/" class="card" target="_blank">
+        <h3>Landing Page Pokémon</h3>
+        <p>Proyecto con HTML y CSS donde apliqué diseño responsive y animaciones.</p>
       </a>
-    <!--  Mini juego JS -->
+
+      <a href="https://nachopereyra19.github.io/portfolio-web/" class="card" target="_blank">
+        <h3>Portfolio Personal</h3>
+        <p>Mi primer portfolio con efectos y estilo profesional.</p>
+      </a>
+
+      <a href="https://nachopereyra19.github.io/calculadoraJS/" class="card" target="_blank">
+        <h3>Calculadora JS</h3>
+        <p>Calculadora simple realizada con JavaScript.</p>
+      </a>
+
       <a href="https://nachopereyra19.github.io/miniJuegoJS/" class="card" target="_blank">
         <h3>Mini juego</h3>
-        <p>Mi primer juego con JavaScript</p>
+        <p>Mi primer juego usando JavaScript.</p>
       </a>
+
     </div>
   </section>
-<!--  Contacto -->
- <section id="contacto" class="contact">
-  <h2>Contacto</h2>
-  <p>¿Tenés alguna propuesta o querés contactar conmigo?</p>
 
-  <form class="contact-form" action="mailto:nachopereyra1422@gmail.com" method="POST" enctype="text/plain">
-    <div class="form-group">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-    </div>
+  <!-- ===== CONTACTO ===== -->
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+    <p>¿Querés colaborar o tenés una propuesta?</p>
 
-    <div class="form-group">
-      <input type="email" name="email" placeholder="Tu correo" required>
-    </div>
+    <form class="contact-form" action="https://formspree.io/f/xqakvgkr" method="POST">
 
-    <div class="form-group">
-      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
-    </div>
+      <div class="form-group">
+        <input type="text" name="nombre" placeholder="Tu nombre" required />
+      </div>
 
-    <button type="submit" class="btn">Enviar mensaje</button>
-  </form>
- </section>
-<!--  Pie de pagina -->
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Tu email" required />
+      </div>
+
+      <div class="form-group">
+        <textarea name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
+      </div>
+
+      <button type="submit" class="btn">Enviar</button>
+
+    </form>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
   <footer>
     <p>© 2025 Ignacio Pereyra | Portfolio Web</p>
   </footer>
-<!-- Cambiar entre modo dia y modo noche-->
-<script>
-  const toggle = document.getElementById('theme-toggle');
-  const body = document.body;
-  toggle.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    body.classList.toggle('light');
-    toggle.textContent = body.classList.contains('dark') ? '☀️' : '🌙'; });
-</script>
+
+  <!-- ===== SCRIPT MODO OSCURO ===== -->
+  <script>
+    const toggle = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    toggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      body.classList.toggle("light");
+      toggle.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
+    });
+  </script>
+
 </body>
 </html>
-
-
