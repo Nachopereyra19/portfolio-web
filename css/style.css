@@ -54,51 +54,63 @@ body.light .btn:hover {
 }
 
 /* ====== HEADER ====== */
+/* ====== HEADER Y NAV CORREGIDOS ===== */
 header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
+  display: flex;
+  justify-content: center; /* centrar nav + logo juntos */
+  align-items: center;
+  padding: 15px 20px;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Dentro del header queremos un contenedor para alinear */
+header .header-container {
+  width: 100%;
+  max-width: 900px; /* o lo que te convenga */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
-  z-index: 10;
-  backdrop-filter: blur(8px);
-  border-bottom: 2px solid #00ffff55;
-  background: rgba(0,0,0,0.7);
 }
 
+/* Logo alineado a la izquierda del contenedor, nav al centro */
 .logo {
-  font-weight: 700;
-  font-size: 1.8em;
-  letter-spacing: 2px;
-  color: var(--accent);
-  animation: glowPulse 3s ease-in-out infinite;
-  transition: color 0.6s, text-shadow 0.6s;
+  flex: 0 0 auto;
 }
 
-@keyframes glowPulse {
-  0%, 100% { text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent); }
-  50% { text-shadow: 0 0 25px var(--accent), 0 0 50px var(--accent); }
+/* Nav: centro los links */
+header nav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 
-nav a {
+header nav a {
   color: inherit;
-  margin: 0 15px;
   text-decoration: none;
-  transition: 0.3s;
+  padding: 5px 10px;
+  transition: color 0.3s;
 }
 
-nav a:hover {
+header nav a:hover {
   color: var(--accent);
 }
 
 #theme-toggle {
+  flex: 0 0 auto;
   background: none;
   border: none;
-  font-size: 1.4em;
   cursor: pointer;
   color: var(--accent);
+  font-size: 1.4em;
   transition: transform 0.3s;
 }
 
@@ -106,51 +118,57 @@ nav a:hover {
   transform: scale(1.2);
 }
 
-/* ====== HERO ====== */
-
+/* ====== AJUSTAR HERO PARA HEADER FIJO ===== */
 .hero {
-  height: 100vh;
+  /* para que el contenido no quede detrás del header fijo */
+  padding-top: calc(15px + 1.8em + 20px); /* ajustar: header padding + alto logo + espacio extra */
+  /* mantengo los otros estilos que ya tenías */
+  height: calc(100vh - (15px + 1.8em + 20px));
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
-}
-
-.hero-inner {
-  max-width: 650px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.hero-text {
-  padding: 0 15px;
   text-align: center;
 }
 
-/* === TYPING UNIVERSAL === */
+/* ====== CORRECCIÓN DEL TYPING (animación) ===== */
 .typing {
   display: inline-block;
   overflow: hidden;
   border-right: 3px solid var(--accent);
   white-space: nowrap;
+  width: 0;
   animation: typing 3.5s steps(30, end), blink .7s infinite;
   max-width: 100%;
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes blink {
-  50% { border-color: transparent }
+  50% { border-color: transparent; }
 }
 
-/* Ajuste mobile */
+/* Ajuste en pantallas muy pequeñas si se rompe la línea */
 @media (max-width: 600px) {
   .typing {
     font-size: 1.8rem;
     white-space: normal;
+  }
+}
+
+/* ====== AJUSTES RESPONSIVE HEADER ===== */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 10px;
+  }
+  header .header-container {
+    max-width: 100%;
+  }
+  nav a {
+    padding: 5px;
+    margin: 0 5px;
   }
 }
 
@@ -309,3 +327,4 @@ footer {
     font-size: 1.9em;
   }
 }
+
