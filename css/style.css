@@ -1,118 +1,102 @@
-/* ==========================================================
-     ESTILO PORTFOLIO OSCURO / CLARO 
-   ========================================================== */
+/* ====== ESTILOS GENERALES ====== */
 
-/* ====== VARIABLES CSS ====== */
+
 :root {
-  --accent: #00ffff; /* Color principal del tema, usado para textos, botones y efectos neón */
+  --accent: #00ffff; /* color celeste por defecto */
 }
 
-/* ====== RESET GENERAL ====== */
 * {
-  margin: 0; /* Elimina margenes por defecto */
-  padding: 0; /* Elimina padding por defecto */
-  box-sizing: border-box; /* Hace que padding y border se incluyan en el ancho total */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ====== ESTILO BASE DEL BODY ====== */
+
 body {
-  font-family: 'Poppins', sans-serif; /* Fuente moderna y legible */
-  overflow-x: hidden; /* Evita scroll horizontal no deseado */
-  transition: background 0.6s, color 0.6s; /* Animación suave al cambiar colores (modo oscuro/claro) */
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  transition: background 0.6s, color 0.6s;
 }
 
-/* ==========================================================
-   🔹 MODO OSCURO
-   ========================================================== */
+/* ====== MODO OSCURO ====== */
 body.dark {
-  --accent: #00ffff; /* Color principal en modo oscuro */
-  background: radial-gradient(circle at top, #0a0a0a, #000); /* Fondo degradado oscuro */
-  color: #fff; /* Texto claro */
+  --accent: #00ffff;
+  background: radial-gradient(circle at top, #0a0a0a, #000);
+  color: #fff;
 }
 
-/* Cartas en modo oscuro */
 body.dark .card {
-  background: rgba(255,255,255,0.05); /* Fondo semi-transparente */
-  border: 1px solid #00ffff33; /* Borde tenue con color principal */
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #00ffff33;
 }
 
-/* Titulos y botones */
 body.dark h2 { color: #00ffff; }
 body.dark .btn { background: var(--accent); color: #000; }
-body.dark .btn:hover { background: #00cccc; } /* Cambio de color al pasar el mouse */
+body.dark .btn:hover { background: #00cccc; }
 
-/* ==========================================================
-   🔹 MODO CLARO
-   ========================================================== */
+/* ====== MODO CLARO ====== */
 body.light {
-  --accent: #9b5de5; /* Color principal en modo claro */
-  background: linear-gradient(180deg, #f6f6f6, #eaeaea); /* Fondo degradado claro */
-  color: #111; /* Texto oscuro */
+  --accent: #9b5de5;
+  background: linear-gradient(180deg, #f6f6f6, #eaeaea);
+  color: #111;
 }
 
-/* Header y elementos claros */
 body.light header {
-  background: rgba(255,255,255,0.8); /* Fondo semi-transparente */
-  border-bottom: 2px solid #00cccc55; /* Borde inferior */
+  background: rgba(255,255,255,0.8);
+  border-bottom: 2px solid #00cccc55;
 }
 
 body.light h2 { color: #00cccc; }
-
 body.light .btn {
   background: var(--accent);
   color: #fff;
 }
-
 body.light .btn:hover {
   background: #009999;
 }
 
-/* ==========================================================
-   🔹 HEADER - Barra superior fija
-   ========================================================== */
+/* ====== HEADER ====== */
 header {
-  position: fixed; /* Siempre visible */
-  top: 0; /* Pegado arriba */
-  width: 100%; /* Ocupa todo el ancho */
-  display: flex; /* Layout flexible */
-  justify-content: space-between; /* Separación de logo y nav */
-  align-items: center; /* Centra verticalmente */
-  padding: 15px 50px; /* Espaciado interno */
-  z-index: 10; /* Por encima de otros elementos */
-  backdrop-filter: blur(8px); /* Efecto de vidrio difuminado */
-  border-bottom: 2px solid #00ffff55; /* Borde inferior semitransparente */
-  background: rgba(0,0,0,0.7); /* Fondo semi-transparente oscuro */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid #00ffff55;
+  background: rgba(0,0,0,0.7);
 }
 
-/* Logo con efecto neón pulsante */
 .logo {
   font-weight: 700;
   font-size: 1.8em;
   letter-spacing: 2px;
   color: var(--accent);
-  animation: glowPulse 3s ease-in-out infinite; /* Animación de brillo */
+  animation: glowPulse 3s ease-in-out infinite;
   transition: color 0.6s, text-shadow 0.6s;
 }
 
-/* Animación de brillo pulsante */
+/* Animación de brillo adaptable */
 @keyframes glowPulse {
   0%, 100% { text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent); }
   50% { text-shadow: 0 0 25px var(--accent), 0 0 50px var(--accent); }
 }
 
-/* Navegación */
+
 nav a {
-  color: inherit; /* Hereda color del tema */
-  margin: 0 15px; /* Separación entre links */
+  color: inherit;
+  margin: 0 15px;
   text-decoration: none;
-  transition: 0.3s; /* Suaviza cambios de color */
+  transition: 0.3s;
 }
 
 nav a:hover {
-  color: var(--accent); /* Resalta al pasar el mouse */
+  color: var(--accent);
 }
 
-/* Botón de cambio de tema */
 #theme-toggle {
   background: none;
   border: none;
@@ -123,34 +107,37 @@ nav a:hover {
 }
 
 #theme-toggle:hover {
-  transform: scale(1.2); /* Efecto agrandado al pasar el mouse */
+  transform: scale(1.2);
 }
 
-/* ==========================================================
-   🔹 HERO - Sección inicial
-   ========================================================== */
+/* ====== HERO ====== */
+
 .hero {
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  height: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center; /* Centra contenido */
-  text-align: center;
-  padding: 0 20px; /* Espaciado lateral */
+  padding: 0 20px;
+}
+
+.hero-inner {
+  max-width: 650px;      
+  margin: 0 auto;
+  width: 100%;
 }
 
 .hero-text {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 20px; /* espacio interno */
+  padding: 0 15px;        
 }
 
-/* ===== TYPING EFFECT ===== */
+
+/* === TYPING EFFECT === */
 .typing {
-  overflow: hidden; /* Oculta texto que desborda */
-  border-right: 3px solid #00ffff; /* Cursor tipo terminal */
+  overflow: hidden;
+  border-right: 3px solid #00ffff;
   white-space: nowrap;
-  animation: typing 4s steps(25) 1s 1 normal both, blink 0.7s infinite; /* Animación de tipeo */
-  width: 0; /* Inicialmente oculto */
+  animation: typing 4s steps(25) 1s 1 normal both, blink 0.7s infinite;
+  width: 0;
 }
 
 @keyframes typing {
@@ -159,7 +146,7 @@ nav a:hover {
 }
 
 @keyframes blink {
-  50% { border-color: transparent; } /* Parpadeo cursor */
+  50% { border-color: transparent; }
 }
 
 .hero-text h1 {
@@ -173,6 +160,7 @@ nav a:hover {
   transition: color 0.6s, text-shadow 0.6s;
 }
 
+
 .hero-text h2 {
   font-weight: 300;
   margin-bottom: 20px;
@@ -185,7 +173,6 @@ nav a:hover {
   color: #aaa;
 }
 
-/* Botones */
 .btn {
   padding: 5px 25px;
   border-radius: 25px;
@@ -194,18 +181,16 @@ nav a:hover {
   text-decoration: none;
 }
 
-/* ==========================================================
-   🔹 SECCIONES GENERALES
-   ========================================================== */
+/* ====== SECCIONES ====== */
 section {
-  padding: 100px 50px; /* Espaciado interno */
-  text-align: center; /* Centra contenido */
+  padding: 100px 50px;
+  text-align: center;
 }
 
 .about, .projects, .contact {
-  background: rgba(255, 255, 255, 0.03); /* Fondo tenue */
+  background: rgba(255, 255, 255, 0.03);
   border-top: 1px solid #00ffff22;
-  border-bottom: 1px solid #00ffff22; /* Bordes sutiles */
+  border-bottom: 1px solid #00ffff22;
 }
 
 h2 {
@@ -214,39 +199,34 @@ h2 {
 }
 
 p {
-  line-height: 1.6; /* Espaciado entre líneas */
+  line-height: 1.6;
 }
 
-/* ==========================================================
-   🔹 PROYECTOS - GRID DE CARDS
-   ========================================================== */
+/* ====== PROYECTOS ====== */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste automático según pantalla */
-  gap: 30px; /* Espaciado entre cards */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
   margin-top: 40px;
 }
 
-/* Tarjetas individuales */
 .card {
-  display: block; /* Se comporta como bloque clickeable */
-  text-decoration: none; /* Sin subrayado */
-  color: inherit; /* Hereda color del tema */
-  border-radius: 15px; /* Bordes redondeados */
-  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Animaciones suaves */
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 15px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
   padding: 25px;
-  opacity: 0; /* Inicialmente invisible */
-  transform: translateY(40px); /* Posición inicial abajo */
-  animation: fadeUp 1s ease forwards; /* Efecto subir */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
 }
 
-/* Retraso de animación por card */
 .card:nth-child(1) { animation-delay: 0.3s; }
 .card:nth-child(2) { animation-delay: 0.6s; }
 .card:nth-child(3) { animation-delay: 0.9s; }
 
-/* Keyframes animación subir */
 @keyframes fadeUp {
   to {
     opacity: 1;
@@ -254,15 +234,13 @@ p {
   }
 }
 
-/* Hover de la card */
+/* Hover simple */
 .card:hover {
-  transform: translateY(-10px); /* Leve elevación */
-  box-shadow: 0 0 10px rgba(0,255,255,0.1); /* Sombra tipo neón */
+  transform: translateY(-10px);
+  box-shadow: 0 0 10px rgba(0,255,255,0.1);
 }
 
-/* ==========================================================
-   🔹 FOOTER
-   ========================================================== */
+/* ====== FOOTER ====== */
 footer {
   text-align: center;
   padding: 20px;
@@ -270,12 +248,10 @@ footer {
   border-top: 1px solid #00ffff33;
 }
 
-/* ==========================================================
-   🔹 RESPONSIVE - Ajustes para pantallas pequeñas
-   ========================================================== */
+/* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
   header {
-    flex-direction: column; /* Pone logo y nav vertical */
+    flex-direction: column;
     gap: 10px;
     padding: 20px;
   }
@@ -286,18 +262,22 @@ footer {
     font-size: 1em;
   }
 }
-@media (max-width: 600px) {
-  header {
-    margin: 16px;
-    padding: 18px;
-  }
-}
+
+
 @media (max-width: 480px) {
   .hero {
-    padding: 0 15px;
+    padding: 0 10px;
   }
   .hero-text {
-    padding: 0 10px; /* más suave en pantallas chicas */
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px 20px;
   }
 }
 
