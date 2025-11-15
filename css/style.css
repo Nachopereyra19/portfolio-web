@@ -138,6 +138,12 @@ nav a:hover {
   padding: 0 20px; /* Espaciado lateral */
 }
 
+.hero-text {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px; /* espacio interno */
+}
+
 /* ===== TYPING EFFECT ===== */
 .typing {
   overflow: hidden; /* Oculta texto que desborda */
@@ -286,5 +292,14 @@ footer {
     padding: 18px;
   }
 }
+@media (max-width: 480px) {
+  .hero {
+    padding: 0 15px;
+  }
+  .hero-text {
+    padding: 0 10px; /* más suave en pantallas chicas */
+  }
+}
+
 
 
