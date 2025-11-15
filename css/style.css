@@ -154,15 +154,23 @@ nav a:hover {
 /*    ANIMACIÓN TYPING   */
 /* ===================== */
 
+
 .typing {
   display: inline-block;
-  white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid var(--accent);
-  animation: typing 3.5s steps(30), blink .7s infinite;
-  width: 0;
+  white-space: nowrap;
+  animation: typing 3.5s steps(30, end), blink .7s infinite;
+  font-size: clamp(1.4rem, 6vw, 2.5rem);
 }
 
+/* Ajuste especial para que NO se corte en móviles */
+@media (max-width: 420px) {
+  .typing {
+    font-size: 6vw;  /* se achica proporcionalmente al ancho */
+    width: 100vw;    /* le da espacio real para escribir */
+  }
+}
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
@@ -304,4 +312,5 @@ footer {
     font-size: 2.2rem;
   }
 }
+
 
