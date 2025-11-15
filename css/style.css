@@ -281,5 +281,20 @@ footer {
   }
 }
 
+@media (max-width: 600px) {
+  .presentation {
+    width: 90%;
+    padding: 25px 20px;
+    margin: 20px auto;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .presentation h1 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+}
+
 
 
